@@ -5,31 +5,43 @@ class GenChar {
   public $syllables_default = 3;
   public $file_flags = FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES;
 
-  public $wow_classes;
+  public $wow_classfiles;
+  public $wow_class;
   public $coll_dir = 'wowclass';
   public $coll_path;
-  public $coll = [];
+  public $coll;
 
   function __construct() {
+
     $this->coll_path = dirname(__FILE__) . '/' . $this->coll_dir;
 
     # load all files in collection_dir path
-    $this->wow_classes = $this->get_coll_files();
+    $this->wow_classfiles = $this->get_coll_files();
 
-    for( $i = 0; $i < sizeof( $this->wow_classes ); $i++ ) {
+    # get the existing wow class names.
+    for( $i = 0; $i < sizeof( $this->wow_classfiles ); $i++ ) {
+      $tmp[$i] = explode( '.', $this->wow_classfiles[$i] );
+      $this->wow_class[$i] = $tmp[$i][0];
+    }
+    #var_dump( $this->wow_class );
+
+    for( $i = 0; $i < sizeof( $this->wow_classfiles ); $i++ ) {
+
+      $this->coll[$this->wow_class[$i]] = array();
 
       # write wow class name in first entry
-      $this->coll[$i][0] = $this->wow_classes[$i];
+      $this->coll[$this->wow_class[$i]]['file'] = $this->wow_classfiles[$i];
 
       # shortcut
-      $p = $this->coll_path . '/' . $this->wow_classes[$i];
+      $p = $this->coll_path . '/' . $this->wow_classfiles[$i];
 
       # write path in second entry
-      $this->coll[$i][1] = $p;
+      $this->coll[$this->wow_class[$i]]['path'] = $p;
 
       # write array of values from file in third entry
-      $this->coll[$i][2] = file( $p, $this->file_flags );
+      $this->coll[$this->wow_class[$i]]['values'] = file( $p, $htis->file_flags );
     }
+
   }
 
   function get_coll_files() {
@@ -53,17 +65,53 @@ class GenChar {
     var_dump( $collection );
   }
 
+  # utility function that does the heavy work.
+  function gen_charname( $wowclass, $syllables  ) {
+    # generate charname for a given wow class.
 
-  function trim_name( $the_name ) {
-
-    if( strlen( $the_name ) > $this->char_max_len ) {
-      $result = substr( $the_name, 0, $this->char_max_len );
+    # recursion cancel condition
+    if( $syllables == 0 ) {
+      return;
     }
 
+    # how much entries in collection for this wow class?
+    $max = sizeof( $this->coll[$wowclass]['values']) - 1;
+
+    # generate random pointer to an entry
+    $pointer = random_int( 0, $max );
+
+    # get this syllable
+    $namepart = $this->coll[$wowclass]['values'][$pointer];
+
+    # clean from whitespaces
+    $namepart = trim( $namepart );
+
+    echo "<br>pointer: " . $pointer;
+    echo " namepart: " . $namepart;
+
+    # enter recursion
+    $result = $namepart . $this->gen_charname( $wowclass, $syllables-1 );
+
+    return $result;
+
+  }
+
+  # pretty print char name.
+  function char_name( $wowclass, $syllables ) {
+    # get char name from utility function.
+    $result = $this->gen_charname( $wowclass, $syllables );
+
+    # check max length of char name.
+    if( strlen( $result ) > $this->char_max_len ) {
+      $result = substr( $result, 0, $this->char_max_len );
+    }
+
+    # first letter uppercase
     $result = ucfirst( $result );
 
     return $result;
   }
+
 }
 
 
