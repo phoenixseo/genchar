@@ -61,10 +61,6 @@ class GenChar {
   }
 
 
-  function print_coll( &$collection ) {
-    var_dump( $collection );
-  }
-
   # utility function that does the heavy work.
   function gen_charname( $wowclass, $syllables  ) {
     # generate charname for a given wow class.
@@ -86,8 +82,8 @@ class GenChar {
     # clean from whitespaces
     $namepart = trim( $namepart );
 
-    echo "<br>pointer: " . $pointer;
-    echo " namepart: " . $namepart;
+    #echo "<br>pointer: " . $pointer;
+    #echo " namepart: " . $namepart;
 
     # enter recursion
     $result = $namepart . $this->gen_charname( $wowclass, $syllables-1 );
@@ -110,6 +106,45 @@ class GenChar {
     $result = ucfirst( $result );
 
     return $result;
+  }
+
+
+  /* utility functions ----------------------------------------- */
+
+  function print_coll( $wowclass ) {
+    for( $i = 0; $i < sizeof( $this->coll[$wowclass]['values'] ); $i++ ) {
+      echo "<br>" . $this->coll[$wowclass]['values'][$i];
+    }
+  }
+
+  function get_coll_size( $wowclass ) {
+    return sizeof( $this->coll[$wowclass]['values'] );
+  }
+
+  function print_classes( ) {
+    $size = sizeof( $this->wow_class );
+
+    for( $i = 0; $i < $size; $i++ ) {
+      echo ucfirst( $this->wow_class[$i] );
+      if( $i < ( $size-1 )) {
+        echo ", ";
+      }
+    }
+  }
+
+  function print_stats( ) {
+    echo "<h3>GenChar Stats:</h3>";
+
+    echo "<ul>";
+    for( $i = 0; $i < sizeof( $this->wow_class ); $i++ ) {
+      echo "<li>";
+      echo ucfirst( $this->wow_class[$i] );
+      echo ": ";
+      echo $this->get_coll_size( $this->wow_class[$i] );
+      echo " Syllables";
+      echo "</li>";
+    }
+    echo "</ul>";
   }
 
 }
