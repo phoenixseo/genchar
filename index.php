@@ -15,11 +15,11 @@ $g = new GenChar;
   <header class="pb-24 bg-indigo-600">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <div class="relative py-5 flex items-center justify-center lg:justify-between">
-        <div class="absolute left-0 flex-shrink-0 lg:static">
-          <a href="#">
+        <div class="absolute left-0 flex items-center flex-shrink-0 lg:static">
+          <a href="">
             <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-300.svg" alt="GenChar">
-            GenChar
           </a>
+          <a href="" class="text-white ml-3">GenChar</a>
         </div>
 
         <!-- Right section on desktop -->
@@ -31,7 +31,7 @@ $g = new GenChar;
         <div class="grid grid-cols-3 gap-8 items-center">
           <div class="col-span-2">
             <nav class="flex space-x-4">
-              <a href="#" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10" aria-current="page"> GenChar </a>
+              <a href="" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10" aria-current="page"> GenChar </a>
 
               <a href="https://gens-der-allianz.de" class="text-indigo-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Gens der Allianz </a>
             </nav>
