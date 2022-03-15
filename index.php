@@ -71,6 +71,11 @@ $g = new GenChar;
                 echo '</p>';
                 echo "<hr>";
 
+                echo '<p class="text-xl">Demonhunter 3 parts: ';
+                echo '<br><span class="text-5xl font-mono">'. $g->char_name( 'demonhunter', 3 ) . '</span>';
+                echo '</p>';
+                echo "<hr>";
+
                 echo '<p class="text-xl">Warrior 3 parts: ';
                 echo '<br><span class="text-5xl font-mono">'. $g->char_name( 'warrior', 3 ) . '</span>';
                 echo '</p>';
