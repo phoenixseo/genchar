@@ -113,7 +113,7 @@ class GenChar {
 
   function print_coll( $wowclass ) {
     for( $i = 0; $i < sizeof( $this->coll[$wowclass]['values'] ); $i++ ) {
-      echo "<br>" . $this->coll[$wowclass]['values'][$i];
+      echo $this->coll[$wowclass]['values'][$i] . "<br>";
     }
   }
 
