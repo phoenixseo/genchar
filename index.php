@@ -42,6 +42,7 @@ $g = new GenChar;
               <a href="syllables.php?class=demonhunter" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Demonhunter </a>
               <a href="syllables.php?class=druid" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Druid </a>
               <a href="syllables.php?class=hunter" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Hunter </a>
+              <a href="syllables.php?class=priest" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Priest </a>
               <a href="syllables.php?class=warlock" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Warlock </a>
               <a href="syllables.php?class=warrior" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Warrior </a>
             </nav>
@@ -144,6 +145,18 @@ $g = new GenChar;
                 echo '</div>';
                 echo '<hr>';
 
+
+                echo '<div class="ring-2">';
+                  echo '<div class="flex items-center not-prose bg-gray-200">';
+                  echo $g->get_class_icon('priest');
+                  echo '<span class="ml-2 text-2xl">Priest</span>';
+                  echo '</div>';
+
+                  echo '<div class="not-prose p-2">';
+                  echo '<p class="text-5xl font-mono">'. $g->char_name( 'priest', 3 ) . '</p>';
+                  echo '</div>';
+                echo '</div>';
+                echo '<hr>';
 
 
                 ?>
