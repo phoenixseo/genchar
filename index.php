@@ -16,10 +16,10 @@ $g = new GenChar;
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <div class="relative py-5 flex items-center justify-center lg:justify-between">
         <div class="absolute left-0 flex items-center flex-shrink-0 lg:static">
-          <a href="">
+          <a href="index.php">
             <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-300.svg" alt="GenChar">
           </a>
-          <a href="" class="text-white ml-3">GenChar</a>
+          <a href="index.php" class="text-white ml-3">GenChar</a>
         </div>
 
         <!-- Right section on desktop -->
@@ -32,7 +32,12 @@ $g = new GenChar;
         <div class="grid grid-cols-3 gap-8 items-center">
           <div class="col-span-2">
             <nav class="flex space-x-4">
-              <a href="" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10" aria-current="page"> Generator </a>
+              <a href="index.php" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10" aria-current="page"> Generator </a>
+              <a href="syllables.php?class=demonhunter" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Demonhunter </a>
+              <a href="syllables.php?class=druid" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Druid </a>
+              <a href="syllables.php?class=hunter" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Hunter </a>
+              <a href="syllables.php?class=warlock" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Warlock </a>
+              <a href="syllables.php?class=warrior" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Warrior </a>
             </nav>
           </div>
           <div>
