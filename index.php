@@ -24,6 +24,7 @@ $g = new GenChar;
 
         <!-- Right section on desktop -->
         <div class="hidden lg:ml-4 lg:flex lg:items-center lg:pr-0.5">
+          <a href="https://gens-der-allianz.de" class="text-indigo-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Gens der Allianz </a>
         </div>
 
       </div>
@@ -31,9 +32,7 @@ $g = new GenChar;
         <div class="grid grid-cols-3 gap-8 items-center">
           <div class="col-span-2">
             <nav class="flex space-x-4">
-              <a href="" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10" aria-current="page"> GenChar </a>
-
-              <a href="https://gens-der-allianz.de" class="text-indigo-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"> Gens der Allianz </a>
+              <a href="" class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10" aria-current="page"> Generator </a>
             </nav>
           </div>
           <div>
@@ -56,37 +55,37 @@ $g = new GenChar;
               <div class="p-6 prose">
 
                 <form>
-                <button type="submit" class="flex">
+                <button type="submit" class="flex items-center bg-fuchsia-600 p-3 border ring-2 hover:bg-fuchsia-500">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
                   </svg>
-                  Generate Charname!
+                  <span class="ml-3 font-bold">Generate Charname!</span>
                 </button>
                 </form>
 
                 <?php
 
-                echo '<p class="text-xl">Warlock 3 parts: ';
+                echo '<p class="text-xl">Warlock: ';
                 echo '<br><span class="text-5xl font-mono">'. $g->char_name( 'warlock', 3 ) . '</span>';
                 echo '</p>';
                 echo "<hr>";
 
-                echo '<p class="text-xl">Demonhunter 3 parts: ';
+                echo '<p class="text-xl">Demonhunter: ';
                 echo '<br><span class="text-5xl font-mono">'. $g->char_name( 'demonhunter', 3 ) . '</span>';
                 echo '</p>';
                 echo "<hr>";
 
-                echo '<p class="text-xl">Warrior 3 parts: ';
+                echo '<p class="text-xl">Warrior: ';
                 echo '<br><span class="text-5xl font-mono">'. $g->char_name( 'warrior', 3 ) . '</span>';
                 echo '</p>';
                 echo "<hr>";
 
-                echo '<p class="text-xl">Druid 3 parts: ';
+                echo '<p class="text-xl">Druid: ';
                 echo '<br><span class="text-5xl font-mono">'. $g->char_name( 'druid', 3 ) . '</span>';
                 echo '</p>';
                 echo "<hr>";
 
-                echo '<p class="text-xl">Hunter 3 parts: ';
+                echo '<p class="text-xl">Hunter: ';
                 echo '<br><span class="text-5xl font-mono">'. $g->char_name( 'hunter', 3 ) . '</span>';
                 echo '</p>';
                 echo "<hr>";
