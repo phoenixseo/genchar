@@ -132,6 +132,16 @@ class GenChar {
     }
   }
 
+  function get_class_icon( $wowclass ) {
+    # get wow class icon from wowhead.
+    # sample:
+    # https://wow.zamimg.com/images/wow/icons/large/classicon_hunter.jpg
+    $wowhead_url = 'https://wow.zamimg.com/images/wow/icons/large/';
+    $class_icon = $wowhead_url . 'classicon_' . $wowclass . '.jpg';
+    $img = '<img src="' . $class_icon . '" alt="' . $wowclass . '">';
+    return $img;
+  }
+
   function print_stats( ) {
     echo "<h3>GenChar Stats:</h3>";
 
