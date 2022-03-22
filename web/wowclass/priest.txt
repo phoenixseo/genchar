@@ -19,3 +19,5 @@ shan
 du
 zhi
 vie
+na
+ne
