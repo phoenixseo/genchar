@@ -7,7 +7,7 @@ class GenChar {
 
   public $wow_classfiles;
   public $wow_class;
-  public $coll_dir = 'wowclass';
+  public $coll_dir = 'web/wowclass';
   public $coll_path;
   public $coll;
 
